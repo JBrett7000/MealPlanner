@@ -5,5 +5,6 @@ namespace JulianBrett\MealPlanner\Core\Ingredient;
 
 interface IngredientRepository
 {
-    //put your code here
+    public function getIngredientByName(string $name): IngredientCollection;
+    
 }

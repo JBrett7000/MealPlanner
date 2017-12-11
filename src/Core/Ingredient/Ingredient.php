@@ -15,7 +15,6 @@ class Ingredient
     private $unit;
     
     /**
-     * 
      * @param string $name
      * @param float $quantity
      * @param string $unit
@@ -27,16 +26,25 @@ class Ingredient
         $this->unit = $unit;
     }
     
+    /**
+     * @return string
+     */
     public function getName(): string
     {
         return $this->name;
     }
     
+    /**
+     * @return float
+     */
     public function getQuantity(): float
     {
         return $this->quantity;
     }
     
+    /**
+     * @return string
+     */
     public function getUnit(): string
     {
         return $this->unit;

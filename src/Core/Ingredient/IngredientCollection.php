@@ -42,11 +42,17 @@ class IngredientCollection implements Countable, Iterator
         return $this->ingredients;
     }
 
+    /**
+     * @return \JulianBrett\MealPlanner\Core\Ingredient\Ingredient
+     */
     public function current(): Ingredient
     {
         return $this->ingredients[$this->position];
     }
 
+    /**
+     * @return int
+     */
     public function key(): int
     {
         return $this->position;
@@ -62,9 +68,11 @@ class IngredientCollection implements Countable, Iterator
         $this->position = 0;
     }
 
+    /**
+     * @return bool
+     */
     public function valid(): bool
     {
         return ($this->ingredients[$this->position] instanceof Ingredient);
     }
-
 }
