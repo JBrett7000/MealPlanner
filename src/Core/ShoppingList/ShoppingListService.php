@@ -1,7 +1,9 @@
 <?php
+declare(strict_types=1);
 
-declare (strict_type = 1);
+namespace JulianBrett\MealPlanner\Core\ShoppingList;
 
-class ShoppingListService {
+class ShoppingListService
+{
     //put your code here
 }

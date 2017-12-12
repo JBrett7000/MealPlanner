@@ -1,10 +1,9 @@
 <?php
-declare(strict_type=1);
+declare(strict_types=1);
 
 namespace JulianBrett\MealPlanner\Core\Ingredient;
 
-interface IngredientRepository
+interface IngredientRepositoryInterface
 {
     public function getIngredientByName(string $name): IngredientCollection;
-    
 }

@@ -35,19 +35,11 @@
         "symfony/phpunit-bridge": "^3.0"
     },
     "scripts": {
-        "symfony-scripts": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
-        ],
         "post-install-cmd": [
-            "@symfony-scripts"
+            "composer dump-autoload --optimize --classmap-authoritative"
         ],
         "post-update-cmd": [
-            "@symfony-scripts"
+            "composer dump-autoload --optimize --classmap-authoritative"
         ]
     },
     "config": {
@@ -60,9 +52,6 @@
         "symfony-web-dir": "web",
         "symfony-tests-dir": "tests",
         "symfony-assets-install": "relative",
-        "incenteev-parameters": {
-            "file": "app/config/parameters.yml"
-        },
         "branch-alias": null
     }
 }

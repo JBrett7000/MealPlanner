@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace JulianBrett\MealPlanner\Core\MealPlanner;
 
-class MealPlannerService
+class MealPlannerTest extends PHPUnit_Framework_TestCase
 {
-    //put your code here
 }

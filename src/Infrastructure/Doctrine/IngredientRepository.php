@@ -1,9 +1,18 @@
 <?php
-declare (strict_type = 1);
+declare(strict_types=1);
 
 namespace JulianBrett\MealPlanner\Infrastructure\Doctrine;
 
-class IngredientRepository implements IngredientRepository
+use JulianBrett\MealPlanner\Core\Ingredient\IngredientCollection;
+use JulianBrett\MealPlanner\Core\Ingredient\IngredientRepositoryInterface;
+
+class IngredientRepository implements IngredientRepositoryInterface
 {
-    //put your code here
+    /**
+     * @inheritdoc
+     */
+    public function getIngredientByName(string $name): IngredientCollection
+    {
+        // TODO: Implement getIngredientByName() method.
+    }
 }

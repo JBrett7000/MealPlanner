@@ -1,7 +1,10 @@
 <?php
+declare(strict_types=1);
 
-declare (strict_type = 1);
+namespace JulianBrett\MealPlanner\Infrastructure\Doctrine;
 
-class ShoppingListRepository {
-    //put your code here
+use JulianBrett\MealPlanner\Core\ShoppingList\ShoppingListRepositoryInterface;
+
+class ShoppingListRepository implements ShoppingListRepositoryInterface
+{
 }

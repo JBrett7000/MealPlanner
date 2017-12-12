@@ -1,33 +1,59 @@
 <?php
-declare (strict_type = 1);
+declare(strict_types=1);
+
+namespace JulianBrett\MealPlanner\Core\Recipe\Instruction;
 
 use Countable;
 use Iterator;
 
-class InstructionCollection implements Countable, Iterator {
-    //put your code here
-    public function count(): int {
-        
+class InstructionCollection implements Countable, Iterator
+{
+    /** @var  Instruction[] */
+    private $instructions;
+
+    /** @var  int */
+    private $position;
+
+    /**
+     * @return int
+     */
+    public function count(): int
+    {
+        return count($this->instructions);
     }
 
-    public function current() {
-        
+    /**
+     * @return Instruction
+     */
+    public function current(): Instruction
+    {
+        return $this->instructions[$this->position];
     }
 
-    public function key(): int {
-        
+    /**
+     * @return int
+     */
+    public function key(): int
+    {
+        return $this->position;
     }
 
-    public function next(): void {
-        
+    public function next(): void
+    {
+        $this->position++;
     }
 
-    public function rewind(): void {
-        
+    public function rewind(): void
+    {
+        $this->position = 0;
     }
 
-    public function valid(): bool {
-        
+    /**
+     * @return bool
+     */
+    public function valid(): bool
+    {
+        return ($this->instructions[$this->position] instanceof Instruction);
     }
 
 }

@@ -1,7 +1,10 @@
 <?php
+declare(strict_types=1);
 
-declare (strict_type = 1);
+namespace JulianBrett\MealPlanner\Infrastructure\Doctrine;
 
-class MealRepository {
-    //put your code here
+use JulianBrett\MealPlanner\Core\MealPlanner\Meal\MealRepositoryInterface;
+
+class MealRepository implements MealRepositoryInterface
+{
 }

@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace JulianBrett\MealPlanner\Core\Recipe;
 
-class RecipeCollection
+interface RecipeRepositoryInterface
 {
     //put your code here
 }

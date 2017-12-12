@@ -1,5 +1,5 @@
 <?php
-declare(strict_type=1);
+declare(strict_types=1);
 
 namespace JulianBrett\MealPlanner\Core\Ingredient;
 
@@ -14,7 +14,8 @@ class IngredientCollection implements Countable, Iterator
     /** @var integer */
     private $position;
     
-    public function __construct() {
+    public function __construct()
+    {
         $this->ingredients = [];
     }
     
@@ -29,9 +30,9 @@ class IngredientCollection implements Countable, Iterator
     /**
      * @return int
      */
-    public function count()
+    public function count(): int
     {
-        return sizeof($this->ingredients);
+        return count($this->ingredients);
     }
     
     /**
@@ -43,7 +44,7 @@ class IngredientCollection implements Countable, Iterator
     }
 
     /**
-     * @return \JulianBrett\MealPlanner\Core\Ingredient\Ingredient
+     * @return Ingredient
      */
     public function current(): Ingredient
     {

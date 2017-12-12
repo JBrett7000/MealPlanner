@@ -1,6 +1,9 @@
 <?php
-declare(strict_type=1);
+declare(strict_types=1);
 
-class MealPlanner {
+namespace JulianBrett\MealPlanner\Core\MealPlanner;
+
+class MealPlanner
+{
     //put your code here
 }

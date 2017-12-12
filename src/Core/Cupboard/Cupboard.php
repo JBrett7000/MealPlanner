@@ -1,19 +1,20 @@
 <?php
-declare(strict_type=1);
+declare(strict_types=1);
 
 namespace JulianBrett\MealPlanner\Core\Cupboard;
 
 use JulianBrett\MealPlanner\Core\Ingredient\IngredientCollection;
 
-class Cupboard {
-    
+class Cupboard
+{
     /** @var IngredientCollection */
     private $ingredients;
     
     /**
      * @param IngredientCollection $ingredients
      */
-    public function __construct(IngredientCollection $ingredients) {
+    public function __construct(IngredientCollection $ingredients)
+    {
         $this->ingredients = $ingredients;
     }
     
