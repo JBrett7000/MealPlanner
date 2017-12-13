@@ -1,0 +1,30 @@
+@startuml
+
+title <b>MealPlanner</b>\n
+hide footbox
+
+actor "User"                    as U
+
+
+    participant "MealPlanner"   as MP
+    participant "Meal"          as M
+    participant "Recipe"        as R
+    participant "Ingredient"    as ING
+    participant "Instruction"   as INS
+    participant "ShoppingList"  as SL
+    participant "RecipeBook"    as RB
+    participant "Cupboard"      as C
+
+U -> MP : retrieve meal planner
+MP -> M : retrieve meal
+M -> R  : retrieve recipe
+R -> ING : retrieve ingredients
+R -> INS : retrieve instructions
+MP -> U : list of meals
+MP -> U : list of recipes
+MP -> U : list of ingredients
+R -> U : ingredients for recipe
+R -> U : instructions for recipe
+RB -> R : retrieve recipe
+
+@enduml
