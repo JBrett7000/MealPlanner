@@ -1,0 +1,141 @@
+@startuml
+class Cupboard {
+}
+class Ingredient extends FoodItem {
+}
+abstract FoodItem {
+    string : $name
+}
+class IngredientCollection implements Countable, Iterator {
+    Ingredient[] : $ingredients
+    int : $position
+    __construct()
+    add(Ingredient $ingredient)
+    count() : int
+    getIngredients() : Ingredient[]
+    current() : Ingredient
+    key() : int
+    next()
+    rewind()
+    validate() : bool
+}
+class Instruction {
+}
+class InstructionCollection implements Countable, Iterator {
+    Instruction[] : $instructions
+    int : $position
+    __construct()
+    add(Instruction $instruction)
+    count() : int
+    getInstructions() : Instruction[]
+    current() : Instruction
+    key() : int
+    next()
+    rewind()
+    validate() : bool
+}
+class Recipe {
+    IngredientCollection : $ingredients
+    InstructionCollection : $instructions
+}
+class RecipeCollection implements Countable, Iterator {
+    Recipe[] : $recipes
+    int : $position
+    __construct()
+    add(Recipe $recipe)
+    count() : int
+    getRecipes() : Recipe[]
+    current() : Recipe
+    key() : int
+    next()
+    rewind()
+    validate() : bool
+}
+class RecipeBook {
+}
+class ShoppingList {
+}
+class ShoppingListItem extends FoodItem {
+}
+class ShoppingListItemCollection implements Countable, Iterator {
+    ShoppingListItem[] : $shoppingListItems
+    int : $position
+    __construct()
+    add(ShoppingListItem $shoppingListItem)
+    count() : int
+    getShoppingListItems() : ShoppingListItem[]
+    current() : Plan
+    key() : int
+    next()
+    rewind()
+    validate() : bool
+}
+class CupboardItem extends FoodItem {
+}
+class CupboardItemCollection implements Countable, Iterator {
+    CupboardItem[] : $cupboardItems
+    int : $position
+    __construct()
+    add(CupboardItem $cupboardItem)
+    count() : int
+    getCupboardItems() : CupboardItem[]
+    current() : Plan
+    key() : int
+    next()
+    rewind()
+    validate() : bool
+}
+class MealPlanner {
+    MealCollection : $meals
+    addMeal(Meal $meal)
+    removeMeal(Meal $meal)
+    getMeals() : MealCollection
+}
+class Meal {
+    RecipeCollection : $recipes
+}
+class MealCollection implements Countable, Iterator {
+    Meal[] : $meals
+    int : $position
+    __construct()
+    add(Meal $meal)
+    count() : int
+    getMeals() : Meal[]
+    current() : Meal
+    key() : int
+    next()
+    rewind()
+    validate() : bool
+}
+
+class ShoppingListService {
+    ShoppingList : $shoppingList
+}
+class MealPlannerService {
+    MealPlanner : $mealPlanner
+}
+class RecipeBookService {
+    RecipeBook : $recipeBook
+}
+
+
+
+
+
+IngredientCollection "1" *-- "many" Ingredient : contains
+InstructionCollection "1" *-- "many" Instruction : contains
+RecipeCollection "1" *-- "many" Recipe : contains
+ShoppingListItemCollection "1" *-- "many" ShoppingListItem : contains
+CupboardItemCollection "1" *-- "many" CupboardItem : contains
+MealCollection "1" *-- "many" Meal : contains
+
+Recipe "1" -- "1" IngredientCollection : contains
+Recipe "1" -- "1" InstructionCollection : contains
+Cupboard "1" -- "1" CupboardItemCollection : contains
+ShoppingList "1" -- "1" ShoppingListItemCollection : contains
+MealPlanner "1" -- "1" MealCollection : contains
+Meal "1" -- "1" RecipeCollection : contains
+RecipeBook "1" -- "1" RecipeCollection : contains
+
+
+@enduml
