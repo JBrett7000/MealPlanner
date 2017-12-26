@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace JulianBrett\MealPlanner\Core\Ingredient;
 
-class Ingredient
-{
+class Ingredient implements FoodItem
+{   
     /** @var string */
     private $name;
     
